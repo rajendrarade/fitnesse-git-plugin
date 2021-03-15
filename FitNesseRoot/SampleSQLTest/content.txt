@@ -1,0 +1,20 @@
+!path lib/*.jar
+!| dbfit.SqlServerTest |
+
+!|Connect|Desktop-Obhmrcd|dbuser|123|FitTest|
+!|Store Query|Select [FirstName],[LastName],[Age] from [fittest].[dbo].[testuser]|query1|
+!|Store Query|Select [FirstName],[LastName],[Age] from [fittest].[dbo].[dbuser]|query2|
+!|Compare Stored Queries Hide Matching Rows|query1|query2|
+|FirstName|LastName|
+
+
+!|Connect|Desktop-Obhmrcd|dbuser|123|FitTest|
+!|Store Query|Select [FirstName],[LastName],[Age] from [fittest].[dbo].[testuser]|query1|
+!|Store Query|Select [FirstName],[LastName],[Age] from [fittest].[dbo].[dbuser]|query2|
+!|Compare Stored Queries Hide Matching Rows|query1|query2|
+|FirstName|Age|
+
+!|Connect|Desktop-Obhmrcd|dbuser|123|FitTest|
+!|Query| select * from [fittest].[dbo].[testuser]|
+|FirstName|LastName|Age|
+|test|
